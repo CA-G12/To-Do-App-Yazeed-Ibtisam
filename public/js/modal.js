@@ -13,7 +13,6 @@ const openTaskModal = (taskObj, callback) => {
   const statusSelect = modal.querySelector("#status");
   const cateogrySelect = modal.querySelector("#category");
   const submitBtn = modal.querySelector(".submit");
-  const tasksFomr = modal.querySelector("form");
 
   if (taskObj) {
     const { title, due_date, status, categoryId } = taskObj;
@@ -42,6 +41,7 @@ const openTaskModal = (taskObj, callback) => {
       status: statusSelect.value,
       categoryId: cateogrySelect.value,
     });
+    modal.style.display = "none";
   });
 };
 
