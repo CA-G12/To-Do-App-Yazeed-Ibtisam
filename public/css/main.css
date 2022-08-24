@@ -1,24 +1,248 @@
-:root {
-  --bg-color: #1c1c28;
-  --link-color: #3e7bfa;
-  --bg-color-lighter: #21222c;
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Cairo&family=Poppins:wght@200;300;400&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', "Courgette", 'Times New Roman', Times, serif;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
+:root{
+    --grey: #21222c;
+    --dark: #1c1c28;
+    --blue: #137b7a;
+    --white-border: #ffffffbd;
+    --bg-color: #1c1c28;
+  --link-color: #3e7bfa;
+  --bg-color-lighter: #21222c
 }
+
+body{
+    display: flex;
+    background-color: var(--grey);
+
+}
+
+/* Start Styling Aside bar */
+
+.side-section{
+    background-color: var(--grey);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 20vw;
+    height: 100vh;
+    padding: 6px 20px;
+}
+
+.header-side{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.side-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 40%;
+}
+
+.side-item {
+    display: flex;
+    padding:10px;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.side-item:hover{
+    box-shadow: 0 0 10px 0 var(--blue);
+    transform: scale(1.1);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.side-icon{
+    margin-right: 25px;
+    font-size: 25px !important;
+}
+
+.container-down{
+    width: 100%;
+}
+
+.side-down {
+    margin: 0;
+    font-size: 17px;
+    padding: 10px;
+    width: 80%;
+    margin-bottom: 5px;
+    color: var(--white-border);
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: large;
+}
+
+.side-down:hover {
+    box-shadow: 0 0 10px 0 var(--blue);
+    transform: scale(1.1);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.side-logo {
+    height: 70px;
+    width: 70px;
+    margin-right: 20px;
+}
+/* End Styling Aside bar */
+
+/* Start stlyling navbar */
+main {
+    width: 100%;
+    background-color: var(--dark);
+    height: 100%
+}
+
+nav {
+    background-color: var(--grey);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 14px 40px;
+    border-left: 1px solid #ffffff3d;
+    border-bottom: 1px solid #ffffff3d;
+
+}
+
+.nav-div {
+    display: flex;
+    justify-content: space-around;
+    width: 25%;
+    align-items: center;
+}
+
+.user {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+}
+
+.btn-add {
+    padding: 6px 14px;
+    border-radius: 10px;
+    background-color: #c7c7e5;
+    outline: none;
+    border: none;
+}
+
+.btn-add:hover {
+    transform: scale(1.1);
+    background-color: #a292c0;
+    cursor: pointer;
+}
+
+.fa-noti{
+    font-size: 29px !important;;
+}
+/* End stlyling navbar */
+
+/* Start Styling content section */
+.content{
+    padding: 20px 35px;
+    background-color: var(--dark);
+    border-left: 1px solid #ffffff3d;
+}
+
+.content-list {
+    list-style: none;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+}
+
+.content-list-item {
+    margin-right: 30px;
+    font-weight: 500;
+    color: var(--white-border);
+}
+
+.headline {
+    margin: 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 11px 0 ;
+}
+
+.card {
+    width: 300px;
+    padding: 30px;
+    margin: 20px;
+    background-color: var(--grey);
+    color: white;
+    border-radius: 15px;
+}
+
+.card:hover{
+    box-shadow: 0 0 10px 0 var(--blue);
+    cursor: pointer;
+}
+
+.status {
+    padding: 10px;
+    border-radius: 10px;
+    width: 120px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.done{
+    background-color: #3deb3d;
+}
+
+.todo{
+    background-color: #c21313;
+}
+
+.progress{
+    background-color: orangered;
+}
+
+.description {
+    font-size: 14px;
+    margin: 15px 0;
+    color: var(--white-border);
+}
+/* End Styling content section */
+
+
 
 ul {
   list-style: none;
 }
 
-html {
-  font-size: 62.5%;
+
+ul {
+  list-style: none;
 }
 
-
-body {}
 
 section.tasks,
 section.categories {
@@ -30,7 +254,8 @@ section.categories {
   color: white;
   flex-direction: column;
   width: 100%;
-  padding: 4rem 1.5rem;
+  padding: 40px 15px;
+  display: none;
 }
 
 section.tasks .tasks-search,
@@ -43,8 +268,8 @@ section.categories .tasks-search form {
   display: flex;
   justify-content: flex-end;
   width: 100%;
-  gap: 3rem;
-  margin-bottom: 2rem;
+  gap: 30px;
+  margin-bottom: 20px;
 }
 
 section.tasks .tasks-search form label,
@@ -56,10 +281,10 @@ section.tasks .tasks-search form .form-input,
 section.categories .tasks-search form .form-input {
   display: inline;
   width: fit-content;
-  margin-left: 1rem;
+  margin-left: 10px;
   background-color: #404255;
   color: white;
-  padding: 1.2rem;
+  padding: 12px;
 }
 
 @media(max-width: 768px) {
@@ -83,8 +308,8 @@ section.tasks table th,
 section.categories table td,
 section.categories table th {
   border-bottom: 1px solid #222;
-  padding: 1.4rem;
-  font-size: 1.6rem;
+  padding: 14px;
+  font-size: 16px;
   text-align: center;
 }
 
@@ -119,14 +344,14 @@ section.tasks table td.title,
 section.categories table td.name {
   width: 30%;
   font-weight: bold;
-  font-size: 1.8rem;
+  font-size: 18px;
   text-align: left;
 }
 
 section.tasks table td.status span {
-  padding: 0.7rem;
-  border-radius: 2rem;
-  width: 10rem;
+  padding: 7px;
+  border-radius: 20px;
+  width: 100px;
   display: block;
   text-align: center;
   margin: auto;
@@ -155,8 +380,8 @@ section.categories table td.color .color-box {
 section.categories table td.color .color-box:after {
   content: "";
   background-color: red;
-  width: 2rem;
-  height: 2rem;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   display: block;
   margin: auto;
@@ -167,13 +392,13 @@ section.categories table td.color .color-box:after {
 
   section.tasks table,
   section.categories table {
-    margin-top: 2rem;
+    margin-top: 20px;
     width: 100%;
   }
 
   section.tasks .tasks-search,
   section.categories .tasks-search {
-    margin-top: 2rem;
+    margin-top: 20px;
     width: 100%;
   }
 
@@ -235,7 +460,7 @@ section.categories table td.color .color-box:after {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 20px;
   display: none;
 }
 
@@ -243,48 +468,48 @@ section.categories table td.color .color-box:after {
   position: relative;
   background-color: #4c4e64;
   color: white;
-  width: 50rem;
+  width: 500px;
   max-width: 100%;
 }
 
 .modal-container.categories .modal {
-  width: 30rem;
+  width: 300px;
 }
 
 .modal-form {
-  padding: 2rem;
+  padding: 20px;
 }
 
-h2 {
+.modal-container h2 {
   text-align: center;
-  padding: 2rem;
+  padding: 20px;
   border-bottom: 1px solid #bababa;
-  margin: 2rem 0;
-  font-size: 2.5rem;
+  margin: 20px 0;
+  font-size: 25px;
 }
 
 .form-group {
-  margin-bottom: 2rem;
+  margin-bottom: 20px;
 }
 
 .form-input {
   display: block;
   width: 100%;
-  padding: 1.2rem 1.6rem;
-  font-size: 1.6rem;
+  padding: 12px 16px;
+  font-size: 16px;
   border: none;
   outline: none;
   border-radius: 5px;
-  margin-top: 0.6rem;
+  margin-top: 6px;
 }
 
 .form-input#color {
   padding: 0;
-  height: 4rem;
+  height: 40px;
 }
 
 label {
-  font-size: 1.6rem;
+  font-size: 16px;
 }
 
 
@@ -299,9 +524,9 @@ label {
   color: white;
   width: 100%;
   height: 2.6em;
-  font-size: 1.6rem;
+  font-size: 16px;
   font-weight: bold;
-  margin: 1.5rem 0 0.5rem;
+  margin: 15px 0 5px;
 }
 
 .modal button.submit:hover {
@@ -312,11 +537,11 @@ label {
 .modal button.close {
   color: white;
   font-weight: bold;
-  font-size: 1.6rem;
+  font-size: 16px;
   background-color: #e53232;
   position: absolute;
-  right: 2rem;
-  top: 2rem;
+  right: 20px;
+  top: 20px;
 }
 
 .modal button.close:hover {
@@ -327,22 +552,22 @@ label {
 
 /* Start Paging Style */
 .paging-container {
-  margin-top: 3rem;
+  margin-top: 30px;
   display: flex;
   justify-content: center;
 }
 
 .paging-container .pages {
   display: flex;
-  gap: 1rem;
+  gap: 10px;
 }
 
 .paging-container .pages .page-number {
   display: block;
-  font-size: 2rem;
-  width: 4rem;
-  height: 4rem;
-  line-height: 4rem;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
   text-align: center;
   border-radius: 5px;
   cursor: pointer;
