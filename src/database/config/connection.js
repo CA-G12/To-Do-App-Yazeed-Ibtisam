@@ -7,9 +7,11 @@ if (!DB_URL) {
   throw new Error("The database is not found");
 }
 
+const hostname = new URL(DB_URL).hostname;
+
 const connection = new Pool({
   connectionString: DB_URL,
-  ssl: {rejectUnauthorized: false}
+  ssl: hostname === "localhost" ? false : { rejectUnauthorized: false },
 });
 
 module.exports = { connection };

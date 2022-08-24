@@ -58,7 +58,10 @@ function deleteTask(id) {
     },
     body: JSON.stringify({ id: id }),
   })
-    .then((result) => console.log(result))
+    .then((result) => {
+      console.log(result.redirected);
+      window.location = "/";
+    })
     .catch(console.log);
 }
 // const editBtn = document.querySelector('.edit').onclick = () => {
@@ -79,7 +82,10 @@ function addTask(opeation, taskObj) {
     },
     body: JSON.stringify(taskObj),
   })
-    .then((result) => console.log(result))
+    .then((result) => {
+      console.log(result);
+      window.location = "/";
+    })
     .catch(console.log);
 }
 

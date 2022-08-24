@@ -19,7 +19,10 @@ const updateCategory = (req, res, next) => {
 const deleteCategory = (req, res, next) => {
   const { id } = req.body;
   deleteCategoryQuery(id)
-    .then(() => res.status(201).send("Category is deleted successfully"))
+    .then(() => {
+      res.status(201).send("Category is deleted successfully");
+      res.redirect("/");
+    })
     .catch((err) => next(err));
 };
 
