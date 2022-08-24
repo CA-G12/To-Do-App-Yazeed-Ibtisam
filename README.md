@@ -38,4 +38,3 @@ Afterwards, he clicks on 'Search', and a list of jobs appear that match his sear
 1. [Ibtisam Hemmo](https://github.com/ibtisam-hemmo)
 2. [Yazeed Elhaj-Salem](https://github.com/yazeed)
 
-### Best Regards ❤❤
