@@ -1,4 +1,3 @@
-const 
 // Change active class when click on page number click.
 const pageNumberLinks = document.querySelectorAll(".pages .page-number");
 pageNumberLinks.forEach((numberLink) => {
