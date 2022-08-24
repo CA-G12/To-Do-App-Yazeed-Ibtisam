@@ -1,24 +1,11 @@
-// Change active class when click on page number click.
-// const pageNumberLinks = document.querySelectorAll(".pages .page-number");
-// pageNumberLinks.forEach((numberLink) => {
-//   numberLink.addEventListener("click", (e) => {
-//     pageNumberLinks.forEach((link) => link.classList.remove("active"));
-//     e.target.classList.add("active");
-//   });
-// });
+const cardsContainer = document.querySelector(".container");
+const addBtn = document.querySelector(".btn-add")
 
 fetch("/tasks")
-  // .then((result) =>console.log(result.rows))
   .then((res) => res.json())
   .then((data) => renderTasks(data))
   .catch(console.log);
 
-// fetch("/tasksid").then(console.log).catch(console.log);
-// fetch("/taskstitle").then(console.log).catch(console.log);
-// fetch("/category").then(console.log).catch(console.log);
-// fetch("/filter").then(console.log).catch(console.log);
-
-const cardsContainer = document.querySelector(".container");
 
 function renderTasks(data) {
   cardsContainer.innerHTML = "";
@@ -64,13 +51,11 @@ function deleteTask(id) {
     })
     .catch(console.log);
 }
-// const editBtn = document.querySelector('.edit').onclick = () => {
-//   openTaskModal(taskObj, )
-// }
 
-const addBtn = (document.querySelector(".btn-add").onclick = () => {
+addBtn.onclick = () => {
+  // eslint-disable-next-line no-undef
   openTaskModal(null, addTask);
-});
+};
 
 function addTask(opeation, taskObj) {
   console.log(taskObj);
@@ -106,3 +91,14 @@ function updateTask(opeation, taskObj) {
 function getTaskById(id) {
   return fetch(`/tasks/${id}`);
 }
+
+
+const tasks = document.querySelector('#tasks');
+tasks.addEventListener('click',()=>{
+  window.location.href = "/category.html"
+})
+
+const dashboard = document.querySelector('#dashboard');
+dashboard.addEventListener('click',()=>{
+  window.location.href = "/"
+})

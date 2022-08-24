@@ -236,12 +236,9 @@ nav {
 
 /* End Styling content section */
 
-
-
 ul {
   list-style: none;
 }
-
 
 ul {
   list-style: none;
@@ -255,12 +252,12 @@ section.categories {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  color: white;
+  color: white !important;
   flex-direction: column;
   width: 100%;
   padding: 40px 15px;
-  display: none;
 }
+
 
 section.tasks .tasks-search,
 section.categories .tasks-search {
@@ -315,6 +312,7 @@ section.categories table th {
   padding: 14px;
   font-size: 16px;
   text-align: center;
+  color: white;
 }
 
 .card a,

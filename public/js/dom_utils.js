@@ -6,3 +6,5 @@ HTMLElement.prototype.createAppendElement = function (nodeType, properties) {
   this.appendChild(node);
   return node;
 };
+
+

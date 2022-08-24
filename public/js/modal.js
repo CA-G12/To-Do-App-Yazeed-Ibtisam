@@ -45,9 +45,6 @@ const openTaskModal = (taskObj, callback) => {
   });
 };
 
-// openTaskModal();
-// openTaskModal({title:'Sleep', 'due_date':'2022-12-09', status:'done', categoryId: 1});
-
 const openCategoryModal = (categoryObj, callback) => {
   const modal = document.querySelector(".modal-container.categories");
   modal.style.display = "flex";
@@ -86,6 +83,3 @@ const openCategoryModal = (categoryObj, callback) => {
     });
   });
 };
-
-// openCategoryModal();
-// openCategoryModal({name:'Travel', 'color':'#989765'});
