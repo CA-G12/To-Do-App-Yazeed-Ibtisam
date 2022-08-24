@@ -9,7 +9,7 @@ if (!DB_URL) {
 
 const connection = new Pool({
   connectionString: DB_URL,
-  ssl: new URL(DB_URL).hostname == "localhost" ? false : true,
+  ssl: {rejectUnauthorized: false}
 });
 
 module.exports = { connection };
