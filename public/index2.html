@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Categories -->
+    <section class="categories">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Color</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="1">
+            <td class="name">Travel</td>
+            <td class="color"><span class="color-box" data-color="#985621"></span></td>
+            <td class="edit" title="Edit">
+              <a href="#"><i class="fa-solid fa-pen"></i></a>
+            </td>
+            <td class="delete" title="Delete">
+              <a href="#"><i class="fa-solid fa-trash"></i></a>
+            </td>
+          </tr>
+          <tr id="2">
+            <td class="name">Travel</td>
+            <td class="color"><span class="color-box" data-color="#080"></span></td>
+            <td class="edit" title="Edit">
+              <a href="#"><i class="fa-solid fa-pen"></i></a>
+            </td>
+            <td class="delete" title="Delete">
+              <a href="#"><i class="fa-solid fa-trash"></i></a>
+            </td>
+          </tr>
+          <tr id="3">
+            <td class="name">Travel</td>
+            <td class="color"><span class="color-box" data-color="#569741"></span></td>
+            <td class="edit" title="Edit">
+              <a href="#"><i class="fa-solid fa-pen"></i></a>
+            </td>
+            <td class="delete" title="Delete">
+              <a href="#"><i class="fa-solid fa-trash"></i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Modal Container -->
+    <div class="modal-container categories">
+      <div class="modal">
+        <h2>New Category</h2>
+        <div class="modal-form">
+          <button class="close">&times;</button>
+          <form action="">
+            <div class="form-group">
+              <label for="name">Title</label>
+              <input type="text" class="form-input" id="name" name="name" placeholder="Enter cateogry name" />
+            </div>
+            <div class="form-group">
+              <label for="color">Color</label>
+              <input type="color" class="form-input" id="color" name="color" />
+            </div>
+            <div class="form-group">
+              <button class="submit" value="submit">+ Add</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="js/modal.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

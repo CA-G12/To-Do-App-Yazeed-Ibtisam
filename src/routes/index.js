@@ -1,3 +1,4 @@
 const { tasksRouter } = require("./tasks");
+const { categoryRouter } = require("./categories");
 
-module.exports = { tasksRouter };
+module.exports = { tasksRouter, categoryRouter };
