@@ -2,13 +2,13 @@ const { connection } = require("../../config/connection");
 
 const getAllTasksQuery = () => {
   return connection.query(
-    "SELECT tasks.*, categories.* FROM tasks INNER JOIN categories ON tasks.category_id = categories.id;"
+    "SELECT tasks.id, tasks.title, tasks.due_date, tasks.status, tasks.category_id, categories.name, categories.color FROM tasks INNER JOIN categories ON tasks.category_id = categories.id;"
   );
 };
 
 const getTasksByIdQuery = (id) => {
   const sql = {
-    text: "SELECT tasks.*, categories.* FROM tasks INNER JOIN categories ON tasks.category_id = categories.id WHERE id = $1;",
+    text: "SELECT tasks.id, tasks.title, tasks.due_date, tasks.status, tasks.category_id, categories.name, categories.color WHERE id = $1;",
     values: id,
   };
   return connection.query(sql);

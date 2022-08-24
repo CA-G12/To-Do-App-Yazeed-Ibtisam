@@ -1,14 +1,12 @@
-const { getAllTasks,
-        // getTasksById,
-        // getTasksByTitle,
-        // getTasksByCategoryId,
-        // getFilteredTasks
-     } = require("../controllers");
+const { getAllTasks, getTasksById, insertTask, updateTask, deleteTask } = require("../controllers");
 
 const tasksRouter = require("express").Router();
 
 tasksRouter.get("/tasks", getAllTasks);
-// tasksRouter.get("/tasksid", getTasksById);
+tasksRouter.get("/tasks/:id", getTasksById);
+tasksRouter.post("/tasks", insertTask);
+tasksRouter.put("/tasks", updateTask);
+tasksRouter.delete("/tasks", deleteTask);
 // tasksRouter.get("/taskstitle", getTasksByTitle);
 // tasksRouter.get("/category", getTasksByCategoryId);
 // tasksRouter.get("/filter", getFilteredTasks);

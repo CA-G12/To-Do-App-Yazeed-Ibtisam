@@ -1,13 +1,16 @@
-const { getAllTasks, getTasksById, getTasksByTitle, getTasksByCategoryId, getFilteredTasks } = require("./tasks/query");
-const { insertCategory, updateCategory, deleteCategory } = require("./categories/crud");
-const { getAllCategories, getCategoriesById } = require("./categories/query");
+const { getAllTasks, getTasksById } = require("./tasks/query");
+const { insertTask, updateTask, deleteTask } = require("./tasks/crud");
+// const { insertCategory, updateCategory, deleteCategory } = require("./categories/crud");
+// const { getAllCategories, getCategoriesById } = require("./categories/query");
 
 module.exports = {
-  getAllTasks, getTasksById, getTasksByTitle, getTasksByCategoryId, getFilteredTasks, insertCategory,
-  updateCategory,
-  deleteCategory,
-  getAllCategories,
-  getCategoriesById,
+  getAllTasks,
+  getTasksById,
+  insertTask,
+  updateTask,
+  deleteTask,
+  // updateCategory,
+  // deleteCategory,
+  // getAllCategories,
+  // getCategoriesById,
 };
-
-
