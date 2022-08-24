@@ -1,7 +1,7 @@
 const express = require("express");
 const compression = require("compression");
 const { join } = require("path");
-const { tasksRouter } = require("./routes");
+const { tasksRouter, categoryRouter } = require("./routes");
 
 const app = express();
 app.set("port", process.env.PORT || 3000);
@@ -13,7 +13,7 @@ app.use(express.static(join(__dirname, "..", "public")));
 app.use(compression());
 
 // Database Routes
-app.use(tasksRouter);
+app.use(tasksRouter, categoryRouter);
 
 app.use((req, res) => {
   res.status(404).json({ message: "The requested page is not found" });
