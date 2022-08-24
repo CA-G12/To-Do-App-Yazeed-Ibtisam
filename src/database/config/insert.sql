@@ -1,17 +1,18 @@
 BEGIN;
 
-INSERT INTO tasks (title, description, status) 
+INSERT INTO categories (name, color) 
 VALUES 
-('Sleep', 'sleep deeply', 'To Do'),
-('Eat', 'Eat deeply', 'In Progress'),
-('Repeat', 'Repeat', 'Done'),
-('sleep', 'sleep deeply', 'In Progress');
+('Travel', '#989378'),
+('Personal', '#9ff378'),
+('Life', '#9f478'),
+('Work', '#98ff378');
 
-INSERT INTO categories (name) 
+INSERT INTO tasks (title, description, status, due_date, category_id) 
 VALUES 
-('Travel'),
-('Personal'),
-('Life'),
-('Work');
+('Sleep', 'sleep deeply', 'To Do', '2022-08-07', '1'),
+('Eat', 'Eat deeply', 'In Progress','2022-08-07', '1'),
+('Repeat', 'Repeat', 'Done','2022-09-07', '2'),
+('sleep', 'sleep deeply', 'In Progress', '2022-08-07', '3');
+
 
 COMMIT;

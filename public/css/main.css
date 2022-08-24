@@ -12,6 +12,9 @@
     --dark: #1c1c28;
     --blue: #137b7a;
     --white-border: #ffffffbd;
+    --bg-color: #1c1c28;
+  --link-color: #3e7bfa;
+  --bg-color-lighter: #21222c
 }
 
 body{
@@ -228,3 +231,351 @@ nav {
     color: var(--white-border);
 }
 /* End Styling content section */
+
+
+
+ul {
+  list-style: none;
+}
+
+
+ul {
+  list-style: none;
+}
+
+
+section.tasks,
+section.categories {
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: white;
+  flex-direction: column;
+  width: 100%;
+  padding: 40px 15px;
+  display: none;
+}
+
+section.tasks .tasks-search,
+section.categories .tasks-search {
+  width: 80%;
+}
+
+section.tasks .tasks-search form,
+section.categories .tasks-search form {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+section.tasks .tasks-search form label,
+section.categories .tasks-search form label {
+  display: inline;
+}
+
+section.tasks .tasks-search form .form-input,
+section.categories .tasks-search form .form-input {
+  display: inline;
+  width: fit-content;
+  margin-left: 10px;
+  background-color: #404255;
+  color: white;
+  padding: 12px;
+}
+
+@media(max-width: 768px) {
+
+  section.tasks .tasks-search form .form-input,
+  section.categories .tasks-search form .form-input {
+    margin-left: 0;
+  }
+}
+
+section.tasks table {
+  width: 80%;
+}
+
+section.categories table {
+  width: 40%;
+}
+
+section.tasks table td,
+section.tasks table th,
+section.categories table td,
+section.categories table th {
+  border-bottom: 1px solid #222;
+  padding: 14px;
+  font-size: 16px;
+  text-align: center;
+}
+
+section.tasks table td a,
+section.categories table td a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+section.tasks table td.delete a:hover,
+section.categories table td.delete a:hover {
+  color: red;
+}
+
+section.tasks table td.edit a:hover,
+section.categories table td.edit a:hover {
+  color: green;
+}
+
+section.tasks table th,
+section.categories table th {
+  color: #bcbcbc;
+}
+
+section.tasks table th:first-child,
+section.categories table th:first-child {
+  text-align: left;
+}
+
+section.tasks table td.title,
+section.categories table td.name {
+  width: 30%;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: left;
+}
+
+section.tasks table td.status span {
+  padding: 7px;
+  border-radius: 20px;
+  width: 100px;
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+
+section.tasks table td.status .in-progress {
+  background-color: #6600cc;
+}
+
+section.tasks table td.status .complete {
+  background-color: #06c270;
+}
+
+section.tasks table td.status .to-do {
+  background-color: #f80;
+}
+
+section.tasks table td.status .canceled {
+  background-color: #e53232;
+}
+
+section.categories table td.color .color-box {
+  position: relative;
+}
+
+section.categories table td.color .color-box:after {
+  content: "";
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+}
+
+/* Start Table Responsive */
+@media (max-width: 1024px) {
+
+  section.tasks table,
+  section.categories table {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  section.tasks .tasks-search,
+  section.categories .tasks-search {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 760px) {
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  tbody,
+  tr {
+    width: 100%;
+  }
+
+  section.tasks table td.edit,
+  section.categories table td.edit,
+  section.tasks table td.status {
+    margin-left: auto;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border: 1px solid #ccc;
+  }
+
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+}
+
+/* End Table Responsive */
+
+
+/* Start Modal Style */
+.modal-container {
+  position: fixed;
+  background-color: rgb(33, 34, 44, 0.6);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  display: none;
+}
+
+.modal-container .modal {
+  position: relative;
+  background-color: #4c4e64;
+  color: white;
+  width: 500px;
+  max-width: 100%;
+}
+
+.modal-container.categories .modal {
+  width: 300px;
+}
+
+.modal-form {
+  padding: 20px;
+}
+
+.modal-container h2 {
+  text-align: center;
+  padding: 20px;
+  border-bottom: 1px solid #bababa;
+  margin: 20px 0;
+  font-size: 25px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  margin-top: 6px;
+}
+
+.form-input#color {
+  padding: 0;
+  height: 40px;
+}
+
+label {
+  font-size: 16px;
+}
+
+
+.modal button {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.modal button.submit {
+  background-color: #3e7bfa;
+  color: white;
+  width: 100%;
+  height: 2.6em;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 15px 0 5px;
+}
+
+.modal button.submit:hover {
+  background-color: #3766ca;
+}
+
+
+.modal button.close {
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: #e53232;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.modal button.close:hover {
+  background-color: #be2626;
+}
+
+/* End Modal Style */
+
+/* Start Paging Style */
+.paging-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.paging-container .pages {
+  display: flex;
+  gap: 10px;
+}
+
+.paging-container .pages .page-number {
+  display: block;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.paging-container .pages .page-number.active {
+  background-color: #3766ca;
+}
+
+/* End Paging Style */

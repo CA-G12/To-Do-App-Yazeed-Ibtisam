@@ -134,6 +134,130 @@
     </main>
 
     <script src="https://use.fontawesome.com/cf3935a44e.js"></script>
-</body>
 
+    <section class="tasks">
+      <div class="tasks-search">
+        <form class="">
+          <div class="form-group">
+            <label for="status">Status: </label>
+            <select class="form-input" name="status" placeholder="">
+              <option selected disabled>Select Status</option>
+              <option value="in-progress">In Progress</option>
+              <option value="done">Done</option>
+              <option value="to-do">To Do</option>
+              <option value="canceled">Canceled</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="status">Due Date:</label>
+            <input type="date" class="form-input" name="title" placeholder="Enter Due Date" />
+          </div>
+        </form>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Due Date</th>
+            <th>Status</th>
+            <th>Category</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="1">
+            <td class="title">Sleep</td>
+            <td class="due-date">8-23-2022</td>
+            <td class="status"><span class="to-do">To Do</span></td>
+            <td class="category">Life</td>
+            <td class="edit" title="Edit">
+              <a href="#"><i class="fa-solid fa-pen"></i></a>
+            </td>
+            <td class="delete" title="Delete">
+              <a href="#"><i class="fa-solid fa-trash"></i></a>
+            </td>
+          </tr>
+          <tr id="2">
+            <td class="title">Sleep</td>
+            <td class="due-date">8-23-2022</td>
+            <td class="status"><span class="in-progress">In Progress</span></td>
+            <td class="category">Life</td>
+            <td class="edit" title="Edit">
+              <a href="#"><i class="fa-solid fa-pen"></i></a>
+            </td>
+            <td class="delete" title="Delete">
+              <a href="#"><i class="fa-solid fa-trash"></i></a>
+            </td>
+          </tr>
+          <tr id="3">
+            <td class="title">Sleep</td>
+            <td class="due-date">8-23-2022</td>
+            <td class="status"><span class="complete">Complete</span></td>
+            <td class="category">Life</td>
+            <td class="edit" title="Edit">
+              <a href="#"><i class="fa-solid fa-pen"></i></a>
+            </td>
+            <td class="delete" title="Delete">
+              <a href="#"><i class="fa-solid fa-trash"></i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="paging-container">
+        <div class="pages">
+          <a class="page-number active">1</a>
+          <a class="page-number">2</a>
+          <a class="page-number">3</a>
+          <a class="page-number">4</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Container -->
+    <div class="modal-container tasks">
+      <div class="modal">
+        <h2>New Task</h2>
+        <div class="modal-form">
+          <button class="close">&times;</button>
+          <form action="">
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" class="form-input" id="title" name="title" placeholder="Enter task title" />
+            </div>
+            <div class="form-group">
+              <label for="due-date">Due Date</label>
+              <input type="date" class="form-input" id="due-date" name="due-date" placeholder="Enter Due Date" />
+            </div>
+            <div class="form-group">
+              <label for="status">Status</label>
+              <select class="form-input" id="status" name="status" placeholder="">
+                <option selected disabled>Select Status</option>
+                <option value="in-progress">In Progress</option>
+                <option value="done">Done</option>
+                <option value="to-do">To Do</option>
+                <option value="canceled">Canceled</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="category">Category</label>
+              <select class="form-input" id="category" name="category" placeholder="">
+                <option selected disabled value="0">Select Category</option>
+                <option value="1">Travel</option>
+                <option value="2">Life</option>
+                <option value="3">Health</option>
+                <option value="4">Study</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <button class="submit" value="submit">+ Add</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="js/dom_utils.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/script.js"></script>
+  </body>
 </html>
