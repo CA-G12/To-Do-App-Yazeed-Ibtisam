@@ -1,3 +1,4 @@
+const 
 // Change active class when click on page number click.
 const pageNumberLinks = document.querySelectorAll(".pages .page-number");
 pageNumberLinks.forEach((numberLink) => {
@@ -7,4 +8,10 @@ pageNumberLinks.forEach((numberLink) => {
   });
 });
 
-fetch("https://localhost:3000/tasks").then(console.log).catch(console.log);
+fetch("/tasks").then(
+
+).catch(console.log);
+// fetch("/tasksid").then(console.log).catch(console.log);
+// fetch("/taskstitle").then(console.log).catch(console.log);
+// fetch("/category").then(console.log).catch(console.log);
+// fetch("/filter").then(console.log).catch(console.log);

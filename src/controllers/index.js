@@ -1,3 +1,3 @@
-const { getAllTasks } = require("./tasks/query");
+const { getAllTasks, getTasksById, getTasksByTitle, getTasksByCategoryId, getFilteredTasks } = require("./tasks/query");
 
-module.exports = { getAllTasks };
+module.exports = { getAllTasks, getTasksById, getTasksByTitle, getTasksByCategoryId, getFilteredTasks };
