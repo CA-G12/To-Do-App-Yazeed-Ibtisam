@@ -1,7 +1,7 @@
 const {
-  insertCategoryQuery,
-  updateCategoryQuery,
-  deleteCategoryQuery,
+  // insertCategoryQuery,
+  // updateCategoryQuery,
+  // deleteCategoryQuery,
   getAllCategoriesQuery,
   getAllCategoriesByIdQuery,
 } = require("../../database/queries/categories");

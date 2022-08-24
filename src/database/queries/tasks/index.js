@@ -6,10 +6,7 @@ const {
   getFilteredTasksQuery,
 } = require("./query");
 
-const { 
-    insertTask,
-    updateTask,
-    deleteTask } = require("./crud");
+const { insertTaskQuery, updateTaskQuery, deleteTaskQuery } = require("./crud");
 
 module.exports = {
   getAllTasksQuery,
@@ -17,7 +14,7 @@ module.exports = {
   getTasksByTitleQuery,
   getTasksByCategoryIdQuery,
   getFilteredTasksQuery,
-  insertTask,
-  updateTask,
-  deleteTask,
+  insertTaskQuery,
+  updateTaskQuery,
+  deleteTaskQuery,
 };

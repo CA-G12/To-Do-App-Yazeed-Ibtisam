@@ -1,26 +1,26 @@
-const { insertCategoryQuery, updateCategoryQuery, deleteCategoryQuery } = require("../../database/queries/categories");
+const { insertTaskQuery, updateTaskQuery, deleteTaskQuery } = require("../../database/queries/tasks");
 
-const insertCategory = (req, res, next) => {
-  console.log(req.body);
-  const { name, color } = req.body;
-  console.log(name, color);
-  insertCategoryQuery(name, color)
-    .then(() => res.status(201).send("Category is added successfully"))
+const insertTask = (req, res, next) => {
+  console.log(req.body, "111");
+  const { title, status, dueDate, categoryId } = req.body;
+  insertTaskQuery(title, dueDate, status, categoryId)
+    .then(() => res.status(201).send("Task is added successfully"))
     .catch((err) => next(err));
 };
 
-const updateCategory = (req, res, next) => {
-  const { id, name, color } = req.body;
-  updateCategoryQuery(id, name, color)
-    .then(() => res.status(201).send("Category is updated successfully"))
+const updateTask = (req, res, next) => {
+  const { id, title, dueDate, status, categoryId } = req.body;
+  updateTaskQuery(id, title, dueDate, status, categoryId)
+    .then(() => res.status(201).send("Task is updated successfully"))
     .catch((err) => next(err));
 };
 
-const deleteCategory = (req, res, next) => {
+const deleteTask = (req, res, next) => {
+  console.log(req.body, "333");
   const { id } = req.body;
-  deleteCategoryQuery(id)
-    .then(() => res.status(201).send("Category is deleted successfully"))
+  deleteTaskQuery(id)
+    .then(() => res.status(200).send("Task is deleted successfully"))
     .catch((err) => next(err));
 };
 
-module.exports = { insertCategory, updateCategory, deleteCategory };
+module.exports = { insertTask, updateTask, deleteTask };

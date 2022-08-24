@@ -13,6 +13,7 @@ const openTaskModal = (taskObj, callback) => {
   const statusSelect = modal.querySelector("#status");
   const cateogrySelect = modal.querySelector("#category");
   const submitBtn = modal.querySelector(".submit");
+  const tasksFomr = modal.querySelector("form");
 
   if (taskObj) {
     const { title, due_date, status, categoryId } = taskObj;
@@ -31,13 +32,15 @@ const openTaskModal = (taskObj, callback) => {
     statusSelect.selectedIndex = 0;
   }
 
-  submitBtn.addEventListener("click", () => {
+  submitBtn.addEventListener("click", (e) => {
+    e.preventDefault();
     const operation = taskObj ? "edit" : "add";
     callback(operation, {
       id: taskObj && taskObj["id"],
       title: titleInput.value,
-      due_date: dueDateInput.value,
+      dueDate: dueDateInput.value,
       status: statusSelect.value,
+      categoryId: cateogrySelect.value,
     });
   });
 };
