@@ -14,8 +14,8 @@ CREATE TABLE tasks (
   title VARCHAR(100) NOT NULL,
   description TEXT,
   status VARCHAR(50) NOT NULL,
-  start_date TIMESTAMP DEFAULT NOW(),
-  due_date TIMESTAMP,
+  start_date DATE DEFAULT NOW(),
+  due_date DATE,
   category_id INTEGER REFERENCES categories(id)
 );
 
