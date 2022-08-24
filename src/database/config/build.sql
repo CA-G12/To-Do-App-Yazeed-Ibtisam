@@ -19,7 +19,4 @@ CREATE TABLE tasks (
   category_id INTEGER REFERENCES categories(id)
 );
 
-
-
-
 COMMIT;
