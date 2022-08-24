@@ -2,7 +2,7 @@ const { connection } = require("../../config/connection");
 
 const getAllTasksQuery = () => {
   return connection.query(
-    "SELECT tasks.id, tasks.title, tasks.due_date, tasks.status, tasks.category_id, categories.name, categories.color FROM tasks INNER JOIN categories ON tasks.category_id = categories.id;"
+    "SELECT tasks.id, tasks.title, tasks.description, tasks.due_date, tasks.status, tasks.category_id, categories.name, categories.color FROM tasks INNER JOIN categories ON tasks.category_id = categories.id;"
   );
 };
 

@@ -1,7 +1,6 @@
 const { insertTaskQuery, updateTaskQuery, deleteTaskQuery } = require("../../database/queries/tasks");
 
 const insertTask = (req, res, next) => {
-  console.log(req.body, "111");
   const { title, status, dueDate, categoryId } = req.body;
   insertTaskQuery(title, dueDate, status, categoryId)
     .then(() => {
@@ -20,7 +19,6 @@ const updateTask = (req, res, next) => {
 };
 
 const deleteTask = (req, res, next) => {
-  console.log(req.body, "333");
   const { id } = req.body;
   deleteTaskQuery(id)
     .then(() => {
