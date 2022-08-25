@@ -16,11 +16,11 @@
       </div>
 
       <ul class="side-list">
-        <li class="side-item" id ='dashboard'>
+        <li class="side-item" id="dashboard">
           <i class="fa fa-users side-icon" aria-hidden="true"></i>
           <p>Dashboard</p>
         </li>
-        <li class="side-item" id ='tasks'>
+        <li class="side-item" id="tasks">
           <i class="fa fa-tasks side-icon" aria-hidden="true"></i>
           <p>Tasks</p>
         </li>
@@ -78,15 +78,28 @@
           <form action="">
             <div class="form-group">
               <label for="title">Title</label>
-              <input type="text" class="form-input" id="title" name="title" placeholder="Enter task title"required />
+              <input type="text" class="form-input" id="title" name="title" placeholder="Enter task title" required />
             </div>
             <div class="form-group">
               <label for="description">Description</label>
-              <input type="text" class="form-input" id="description" name="description" placeholder="Enter task description" required/>
+              <input
+                type="text"
+                class="form-input"
+                id="description"
+                name="description"
+                placeholder="Enter task description"
+                required
+              />
             </div>
             <div class="form-group">
               <label for="due-date">Due Date</label>
-              <input type="date" class="form-input" id="due-date" name="due-date" placeholder="Enter Due Date" required/>
+              <input
+                type="datetime-local"
+                class="form-input"
+                id="due-date"
+                name="due-date"
+                placeholder="Enter Due Date"
+              />
             </div>
             <div class="form-group">
               <label for="status">Status</label>
@@ -97,13 +110,14 @@
                 <option value="to-do">To Do</option>
                 <option value="canceled">Canceled</option>
               </select>
-              <label for="category" id ='dd'>Category</label>
+              <label for="category" id="dd">Category</label>
               <select class="form-input" id="category" name="category" placeholder="" required>
                 <option selected disabled value="0">Select Category</option>
                 <option value="1">Travel</option>
-                <option value="2">Life</option>
-                <option value="3">Health</option>
-                <option value="4">Study</option>
+                <option value="2">Work</option>
+                <option value="12">Life</option>
+                <option value="13">Health</option>
+                <option value="14">Study</option>
               </select>
             </div>
             <div class="form-group">

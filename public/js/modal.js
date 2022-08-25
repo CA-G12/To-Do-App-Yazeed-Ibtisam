@@ -16,13 +16,18 @@ const openTaskModal = (taskObj, callback) => {
   const submitBtn = modal.querySelector(".submit");
 
   if (taskObj) {
-    const { title, description, due_date, status, categoryId } = taskObj;
+    const { title, due_date, status } = taskObj;
     modalHeading.textContent = "Edit Task";
     titleInput.value = title;
-    description.value = description;
-    dueDateInput.value = due_date;
+    const date = new Date(due_date);
+    const formatedDate = `${date.toDateString()} ${date.toLocaleTimeString().slice(0, -6)} ${date
+      .toLocaleTimeString()
+      .slice(-2)}`;
+    console.log(formatedDate);
+    dueDateInput.value = formatedDate;
+
     statusSelect.value = status;
-    cateogrySelect.selectedIndex = categoryId;
+    cateogrySelect.value = taskObj["category_id"];
     submitBtn.textContent = "+ Edit";
   } else {
     modalHeading.textContent = "New Task";
@@ -38,12 +43,12 @@ const openTaskModal = (taskObj, callback) => {
     e.preventDefault();
     const operation = taskObj ? "edit" : "add";
     callback(operation, {
-      id: taskObj && taskObj["id"],
+      id: taskObj && taskObj.id,
       title: titleInput.value,
       description: description.value,
       dueDate: dueDateInput.value,
       status: statusSelect.value,
-      categoryId: cateogrySelect.value,
+      category_id: cateogrySelect.value,
     });
     modal.style.display = "none";
   });

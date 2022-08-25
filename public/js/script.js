@@ -1,5 +1,5 @@
 const cardsContainer = document.querySelector(".container");
-const addBtn = document.querySelector(".btn-add")
+const addBtn = document.querySelector(".btn-add");
 
 addBtn.onclick = () => {
   // eslint-disable-next-line no-undef
@@ -12,7 +12,6 @@ fetch("/tasks")
   .catch(console.log);
 
 function renderTasks(data) {
-  
   cardsContainer.innerHTML = "";
   data.forEach((ele) => {
     const card = cardsContainer.createAppendElement("div", { className: "card", id: ele.id });
@@ -20,10 +19,14 @@ function renderTasks(data) {
     editBtn.createAppendElement("i", { className: "fa fa-pencil" });
     editBtn.addEventListener("click", () => {
       getTaskById(card.id)
-        .then((result) => {
-          updateTask("edit", result[0]);
+        .then((result) => result.json())
+        .then((row) => {
+          console.log("Row", row);
+          openTaskModal(row, updateTask);
         })
-        .catch(console.log);
+        .catch((err) => {
+          console.log("Fail: ", err);
+        });
     });
 
     const deleteBtn = card.createAppendElement("button", { className: "delete" });
@@ -48,11 +51,19 @@ function deleteTask(id, next) {
     },
     body: JSON.stringify({ id: id }),
   })
-    .then(() => {window.location = "/";})
-    .catch(err => next(err));
+    .then(() => {
+      window.location = "/";
+    })
+    .catch((err) => next(err));
 }
 
-function addTask(opeation, taskObj, next) {
+addBtn.onclick = () => {
+  // eslint-disable-next-line no-undef
+  openTaskModal(null, addTask);
+};
+
+function addTask(opeation, taskObj) {
+  console.log("TaskObj:", taskObj);
   fetch("/tasks", {
     method: "POST",
     headers: {
@@ -61,8 +72,10 @@ function addTask(opeation, taskObj, next) {
     },
     body: JSON.stringify(taskObj),
   })
-    .then(() => {window.location = "/"})
-    .catch(err => next(err));
+    .then(() => {
+      window.location = "/";
+    })
+    .catch(console.log);
 }
 
 function updateTask(opeation, taskObj) {
@@ -74,10 +87,22 @@ function updateTask(opeation, taskObj) {
     },
     body: JSON.stringify(taskObj),
   })
-    .then((result) => result.json(result))
-    .catch(console.log);
+    .then((result) => console.log("Succeed Edit: ", result))
+    .catch((err) => {
+      console.log("Failed Edit: ", err);
+    });
 }
 
 function getTaskById(id) {
   return fetch(`/tasks/${id}`);
 }
+
+const tasks = document.querySelector("#tasks");
+tasks.addEventListener("click", () => {
+  window.location.href = "/category.html";
+});
+
+const dashboard = document.querySelector("#dashboard");
+dashboard.addEventListener("click", () => {
+  window.location.href = "/";
+});
