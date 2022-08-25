@@ -1,11 +1,10 @@
 const cardsContainer = document.querySelector(".container");
-const addBtn = document.querySelector(".btn-add")
+const addBtn = document.querySelector(".btn-add");
 
 fetch("/tasks")
   .then((res) => res.json())
   .then((data) => renderTasks(data))
   .catch(console.log);
-
 
 function renderTasks(data) {
   cardsContainer.innerHTML = "";
@@ -16,10 +15,14 @@ function renderTasks(data) {
     editBtn.createAppendElement("i", { className: "fa fa-pencil" });
     editBtn.addEventListener("click", () => {
       getTaskById(card.id)
-        .then((result) => {
-          updateTask("edit", result[0]);
+        .then((result) => result.json())
+        .then((row) => {
+          console.log("Row", row);
+          openTaskModal(row, updateTask);
         })
-        .catch(console.log);
+        .catch((err) => {
+          console.log("Fail: ", err);
+        });
     });
 
     const deleteBtn = card.createAppendElement("button", { className: "delete" });
@@ -58,7 +61,7 @@ addBtn.onclick = () => {
 };
 
 function addTask(opeation, taskObj) {
-  console.log(taskObj);
+  console.log("TaskObj:", taskObj);
   fetch("/tasks", {
     method: "POST",
     headers: {
@@ -69,7 +72,7 @@ function addTask(opeation, taskObj) {
   })
     .then((result) => {
       console.log(result);
-      window.location = "/";
+      // window.location = "/";
     })
     .catch(console.log);
 }
@@ -84,21 +87,22 @@ function updateTask(opeation, taskObj) {
     },
     body: JSON.stringify(taskObj),
   })
-    .then((result) => console.log(result))
-    .catch(console.log);
+    .then((result) => console.log("Succeed Edit: ", result))
+    .catch((err) => {
+      console.log("Failed Edit: ", err);
+    });
 }
 
 function getTaskById(id) {
   return fetch(`/tasks/${id}`);
 }
 
+const tasks = document.querySelector("#tasks");
+tasks.addEventListener("click", () => {
+  window.location.href = "/category.html";
+});
 
-const tasks = document.querySelector('#tasks');
-tasks.addEventListener('click',()=>{
-  window.location.href = "/category.html"
-})
-
-const dashboard = document.querySelector('#dashboard');
-dashboard.addEventListener('click',()=>{
-  window.location.href = "/"
-})
+const dashboard = document.querySelector("#dashboard");
+dashboard.addEventListener("click", () => {
+  window.location.href = "/";
+});
