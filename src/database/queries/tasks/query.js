@@ -8,7 +8,7 @@ const getAllTasksQuery = () => {
 
 const getTasksByIdQuery = (id) => {
   const sql = {
-    text: "SELECT id, title, due_date, status, category_id FROM tasks WHERE id = $1;",
+    text: "SELECT id, title, due_date, description, status, category_id FROM tasks WHERE id = $1;",
     values: [id],
   };
   return connection.query(sql);

@@ -63,15 +63,9 @@ Demo link in heroku [To Do List Application](https://evening-ravine-40344.heroku
 
 To get a local copy up and running, follow these simple steps:
 
-git clone https://github.com/GSG-G11/Taskillo
+git clone https://github.com/CA-G12/To-Do-App-Yazeed-Ibtisam.git
 
-code Taskillo
-
-cd client && npm i
-
-npm start
-
-cd server && npm i
+npm i
 
 add .env file, take a look on example.env or ask me about it
 

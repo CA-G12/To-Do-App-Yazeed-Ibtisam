@@ -12,6 +12,7 @@ fetch("/tasks")
   .catch(console.log);
 
 function renderTasks(data) {
+  console.log(data);
   cardsContainer.innerHTML = "";
   data.forEach((ele) => {
     const card = cardsContainer.createAppendElement("div", { className: "card", id: ele.id });
@@ -87,7 +88,9 @@ function updateTask(opeation, taskObj) {
     },
     body: JSON.stringify(taskObj),
   })
-    .then((result) => console.log("Succeed Edit: ", result))
+    .then(() => {
+      window.location = "/";
+    })
     .catch((err) => {
       console.log("Failed Edit: ", err);
     });
@@ -96,13 +99,3 @@ function updateTask(opeation, taskObj) {
 function getTaskById(id) {
   return fetch(`/tasks/${id}`);
 }
-
-const tasks = document.querySelector("#tasks");
-tasks.addEventListener("click", () => {
-  window.location.href = "/category.html";
-});
-
-const dashboard = document.querySelector("#dashboard");
-dashboard.addEventListener("click", () => {
-  window.location.href = "/";
-});
