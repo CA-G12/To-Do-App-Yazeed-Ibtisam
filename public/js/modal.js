@@ -19,12 +19,7 @@ const openTaskModal = (taskObj, callback) => {
     const { title, due_date, status, description } = taskObj;
     modalHeading.textContent = "Edit Task";
     titleInput.value = title;
-    const date = new Date(due_date);
-    const formatedDate = `${date.toLocaleDateString()} ${date.toLocaleTimeString().slice(0, -6)} ${date
-      .toLocaleTimeString()
-      .slice(-2)}`;
-    console.log(formatedDate);
-    dueDateInput.value = formatedDate;
+    dueDateInput.value = due_date.slice(0, -5);
     descriptionInput.value = description;
     statusSelect.value = status;
     cateogrySelect.value = taskObj["category_id"];
