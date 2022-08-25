@@ -1,17 +1,18 @@
 const { connection } = require("../../config/connection");
 
-const insertTaskQuery = (title, dueDate, status, categoryId) => {
+const insertTaskQuery = (title, due_date, status, description, category_id) => {
   const sql = {
-    text: "INSERT INTO tasks (title, due_date, status, category_id) VALUES ($1, $2, $3, $4);",
-    values: [title, dueDate, status, categoryId],
+    text: "INSERT INTO tasks (title, due_date, status, category_id, description) VALUES ($1, $2, $3, $4, $5);",
+    values: [title, due_date, status, category_id, description],
   };
+  console.log(sql);
   return connection.query(sql);
 };
 
-const updateTaskQuery = (id, title, dueDate, status, categoryId) => {
+const updateTaskQuery = (id, title, due_date, status, description, category_id) => {
   const sql = {
-    text: `UPDATE tasks SET title = $2, due_date =$3, status = $4, category_id = $5 WHERE id = $1;`,
-    values: [id, title, dueDate, status, categoryId],
+    text: `UPDATE tasks SET title = $2, due_date = $3, status = $4, category_id = $5, description = $6 WHERE id = $1;`,
+    values: [id, title, due_date, status, category_id, description],
   };
   return connection.query(sql);
 };

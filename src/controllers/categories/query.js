@@ -1,11 +1,8 @@
-const {
-  getAllCategoriesQuery,
-  getAllCategoriesByIdQuery,
-} = require("../../database/queries/categories");
+const { getAllCategoriesQuery, getAllCategoriesByIdQuery } = require("../../database/queries/categories");
 
 const getAllCategories = (req, res, next) => {
   getAllCategoriesQuery()
-    .then((result) => res.status(200).json(result.rows))
+    .then((result) => res.status(200).json(result.rows[0]))
     .catch((err) => next(err));
 };
 
